@@ -9,7 +9,7 @@ body {
   margin: 1rem auto 0;
   width: 40vw;
   height: 40vw;
-  background-image: url("images/clock.png");
+  background-image: url("/assets/images/clock.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
