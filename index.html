@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="system">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,21 +8,18 @@
       href="./assets/images/favicon.ico"
       type="image/x-icon"
     />
+    <script type="module" src="./src/utils/theme.js"></script>
     <link rel="stylesheet" href="./src/style.css" />
     <title>Clock</title>
   </head>
   <body>
-    <div class="image-container">
-      <div class="hours"></div>
-      <div class="minutes"></div>
-      <div class="seconds"></div>
-      <div class="digital-clock">
-        <div class="dhours">00</div>
-        <div class="dminutes">00</div>
-        <div class="dseconds">00</div>
-        <div class="dtime">AM</div>
+    <main>
+      <div id="app">
+        <div id="user-clock"></div>
+        <div id="action-window"></div>
       </div>
-    </div>
+      <div id="clocks" data-scrollbar></div>
+    </main>
     <script src="./src/app.js"></script>
   </body>
 </html>

@@ -1,6 +1,6 @@
-# Analog and Digital Clock with Dark Mode
+# Clockion
 
-Welcome to **Clockify**, a stylish and functional Analog and Digital Clock web application with built-in dark mode. This project demonstrates the use of HTML, CSS, and JavaScript to create an interactive and visually appealing clock interface.
+Welcome to **Clockion**, a stylish and functional Analog and Digital Clock web application with built-in dark mode. This project demonstrates the use of HTML, CSS, and JavaScript to create an interactive and visually appealing clock interface.
 
 ## Table of Contents
 
@@ -14,7 +14,7 @@ Welcome to **Clockify**, a stylish and functional Analog and Digital Clock web a
 
 ## About
 
-**Clockify** is a modern web-based clock application that combines analog and digital clock displays. It features a toggleable dark mode for a user-friendly experience in different lighting conditions.
+**Clockion** is a modern web-based clock application that combines analog and digital clock displays. It features a toggleable dark mode for a user-friendly experience in different lighting conditions.
 
 ## Features
 
@@ -37,7 +37,7 @@ Welcome to **Clockify**, a stylish and functional Analog and Digital Clock web a
 2. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/analog-digital-clock.git
+   git clone https://github.com/yourusername/clockion.git
    ```
 
 ## Contributors
