@@ -5,8 +5,21 @@
 :root {
   --yellow: #eac23f;
   --black: #1f1c19;
+  --white: #ffeccc;
+  --green-light: #a3e9d6;
   --primary-clr: light-dark(var(--yellow), var(--black));
   --secondary-clr: light-dark(var(--black), var(--yellow));
+  --hrs-needle-clr: brown;
+  --min-needle-clr: orangered;
+  --sec-needle-clr: var(--white);
+  --main-radius: 1rem;
+  --needle-g-size: 1.25rem;
+  --hrs-needle-w: 0.75rem;
+  --hrs-needle-h: 4.5rem;
+  --min-needle-w: 0.5rem;
+  --min-needle-h: 6rem;
+  --sec-needle-w: 0.35rem;
+  --sec-needle-h: 7.5rem;
   color-scheme: light dark;
 }
 * {
@@ -50,10 +63,171 @@ main {
   background-color: var(--primary-clr);
   color: var(--secondary-clr);
 }
+.analog-clock {
+  --hrs-angle: 0deg;
+  --mins-angle: 0deg;
+  --sec-angle: 0deg;
+  position: relative;
+  height: 18rem;
+  width: 18rem;
+  border: 0.25rem solid var(--hrs-needle-clr);
+  border-radius: 50%;
+  background-color: var(--secondary-clr);
+  .needle {
+    position: absolute;
+    transform-origin: bottom center;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    transition: none;
+    &.seconds {
+      inset-block: calc(50% - var(--sec-needle-h));
+      inset-inline: calc(50% - var(--sec-needle-w) / 2);
+      width: var(--sec-needle-w);
+      height: var(--sec-needle-h);
+      background-color: var(--sec-needle-clr);
+      transform: rotate(var(--sec-angle));
+    }
+    &.minutes {
+      inset-block: calc(50% - var(--min-needle-h));
+      inset-inline: calc(50% - var(--min-needle-w) / 2);
+      width: var(--min-needle-w);
+      height: var(--min-needle-h);
+      background-color: var(--min-needle-clr);
+      transform: rotate(var(--mins-angle));
+    }
+    &.hours {
+      inset-block: calc(50% - var(--hrs-needle-h));
+      inset-inline: calc(50% - var(--hrs-needle-w) / 2);
+      width: var(--hrs-needle-w);
+      height: var(--hrs-needle-h);
+      background-color: var(--hrs-needle-clr);
+      transform: rotate(var(--hrs-angle));
+    }
+  }
+  .min {
+    z-index: 0;
+    position: absolute;
+    height: 50%;
+    inset-block: 0%;
+    inset-inline: calc(50% - 3rem / 2);
+    display: flex;
+    font-size: 2.5ch;
+    transform-origin: bottom center;
+    width: 3rem;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    color: var(--primary-clr);
+    &:nth-last-of-type(1) {
+      transform: rotate(0deg);
+    }
+    &:nth-last-of-type(2) {
+      --outer-angle: 30deg;
+      transform: rotate(var(--outer-angle));
+      span {
+        transform: rotate(calc(360deg - var(--outer-angle)));
+      }
+    }
+    &:nth-last-of-type(3) {
+      --outer-angle: 60deg;
+      transform: rotate(var(--outer-angle));
+      span {
+        transform: rotate(calc(360deg - var(--outer-angle)));
+      }
+    }
+    &:nth-last-of-type(4) {
+      --outer-angle: 90deg;
+      transform: rotate(var(--outer-angle));
+      span {
+        transform: rotate(calc(360deg - var(--outer-angle)));
+      }
+    }
+    &:nth-last-of-type(5) {
+      --outer-angle: 120deg;
+      transform: rotate(var(--outer-angle));
+      span {
+        transform: rotate(calc(360deg - var(--outer-angle)));
+      }
+    }
+    &:nth-last-of-type(6) {
+      --outer-angle: 150deg;
+      transform: rotate(var(--outer-angle));
+      span {
+        transform: rotate(calc(360deg - var(--outer-angle)));
+      }
+    }
+    &:nth-last-of-type(7) {
+      --outer-angle: 180deg;
+      transform: rotate(var(--outer-angle));
+      span {
+        transform: rotate(calc(360deg - var(--outer-angle)));
+      }
+    }
+    &:nth-last-of-type(8) {
+      --outer-angle: 210deg;
+      transform: rotate(var(--outer-angle));
+      span {
+        transform: rotate(calc(360deg - var(--outer-angle)));
+      }
+    }
+    &:nth-last-of-type(9) {
+      --outer-angle: 240deg;
+      transform: rotate(var(--outer-angle));
+      span {
+        transform: rotate(calc(360deg - var(--outer-angle)));
+      }
+    }
+    &:nth-last-of-type(10) {
+      --outer-angle: 270deg;
+      transform: rotate(var(--outer-angle));
+      span {
+        transform: rotate(calc(360deg - var(--outer-angle)));
+      }
+    }
+    &:nth-last-of-type(11) {
+      --outer-angle: 300deg;
+      transform: rotate(var(--outer-angle));
+      span {
+        transform: rotate(calc(360deg - var(--outer-angle)));
+      }
+    }
+    &:nth-last-of-type(12) {
+      --outer-angle: 330deg;
+      transform: rotate(var(--outer-angle));
+      span {
+        transform: rotate(calc(360deg - var(--outer-angle)));
+      }
+    }
+  }
+  .needleGripper {
+    position: absolute;
+    inset: calc(50% - var(--needle-g-size) / 2);
+    width: var(--needle-g-size);
+    height: var(--needle-g-size);
+    border-radius: 50%;
+    background-color: var(--primary-clr);
+    border: 0.15rem solid var(--primary-clr);
+  }
+}
 #clocks,
 #app {
   height: 50%;
   width: 100%;
+}
+#app {
+  display: flex;
+}
+#user-clock {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#action-window {
+  flex-grow: 1;
+  border-bottom-left-radius: var(--main-radius);
+  background-color: var(--secondary-clr);
 }
 #clocks {
   overflow: hidden auto;
