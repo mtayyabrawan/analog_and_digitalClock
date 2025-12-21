@@ -3,7 +3,7 @@ const _userClock = document.querySelector("#user-clock>.analog-clock");
 function userTick() {
   const mili = updateUserClock();
   const delay = 1000 - mili;
-  setTimeout(tick, delay);
+  setTimeout(userTick, delay);
 }
 
 userTick();
